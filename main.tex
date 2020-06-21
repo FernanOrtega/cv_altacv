@@ -1,0 +1,239 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.0cm,right=1.0cm,top=1.25cm,bottom=1.25cm,columnsep=1.0cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+%Option 1
+\definecolor{VividPurple}{HTML}{3E0097}
+%Option 2
+\definecolor{SepiaOwn}{HTML}{7F462C}
+\definecolor{Mulberry}{HTML}{72243D}
+%Option 3
+\definecolor{pacific}{rgb}{0,0.47,0.68}
+\definecolor{turquoise}{rgb}{0.38,0.75,0.86}
+%Option 4
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+
+\colorlet{name}{black}
+\colorlet{tagline}{turquoise}
+\colorlet{heading}{pacific}
+\colorlet{headingrule}{pacific}
+\colorlet{subheading}{pacific}
+\colorlet{accent}{turquoise}
+
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+\addbibresource{bibliography.bib}
+
+\begin{document}
+\name{Fernando Ortega Gallego}
+\tagline{Data Engineer \faAt\ Plain Concepts UK}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{foto-perfil}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{f.ortega.gallego@gmail.com}
+  \phone{(+34) 680 311 676}
+  %\mailaddress{5B Murillo St, 41980}
+  \location{La Algaba, Sevilla, Spain}
+  \homepage{fernanortega.es}
+  \twitter{@fernanortega}
+  \linkedin{linkedin.com/in/fernanortega/}
+  \github{fernanortega}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{0000-0000-0000-0000}
+  %% You can add your own arbtrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.55}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Experience}
+
+\cvevent{Data Engineer}{Plain Concepts}{March 2019 -- Ongoing}{Fully Remote}
+\begin{itemize}
+    \item Use of NLP algorithms for document classification and clause extraction in legal sector.
+    \item Development of Genetic Algorithm for Lead Case Selection in a Class Action.
+    \item Automation of ML lifecycle, using Mlflow, docker and Azure.
+    \item Talks and workshops related with AI in events like Bilbao AI Summit 2019 or Spark+AI Summit 2020.
+\end{itemize}
+
+\bigskip
+
+\cvevent{Ph.D. Candidate}{University of Sevilla}{April 2015 -- February 2019}{Sevilla, Spain}
+\begin{itemize}
+    \item Research, thesis, NLP, Software Engineering
+    \item Teaching assistant in Desing \& Testing (Software Engineering degree-level course)
+\end{itemize}
+
+\bigskip
+
+\cvevent{CTO \& Cofounder}{Opileak/Dinamic Area}{April 2013 -- March 2015}{Sevilla, Spain}
+\begin{itemize}
+    \item Project management. Business models and product definition.
+    \item Development of Opileak's backend. Text mining Java services and distributed computation.
+    \item Integration of social media analysis techniques in development tools for a public project.
+\end{itemize}
+
+\bigskip
+
+\cvevent{Research Assistant \& Backend Developer}{University of Sevilla \& Dinamic Area}{September 2010 -- March 2013}{Sevilla, Spain}
+\begin{itemize}
+    \item Implementation of algorithms and techniques of text mining and social media analysis.
+    \item Assisted Prof. Rafael Corchuelo in a research project to integrate social media analysis in an education context.
+\end{itemize}
+
+\cvsection{Skills}
+%\begin{tabular}{p{3.95cm}p{4.65cm}p{3.95cm}p{3.95cm}}
+\resizebox{0.55\textwidth}{!}{ 
+\begin{tabular}{lll}
+\cvskill{\textsc{Python}}{5} & 
+  \cvskill{\textsc{Azure}}{4} & 
+  \cvskill{\textsc{MongoDB}}{3} \\
+\cvskill{\textsc{Tensorflow/Keras}}{4} & 
+  \cvskill{\textsc{Databricks}}{4} & 
+  \cvskill{\textsc{Java}}{5} \\
+\cvskill{\textsc{Pandas}}{4} & 
+  \cvskill{\textsc{MLFlow}}{5} & 
+  \cvskill{\textsc{C\#}}{2} \\
+\cvskill{\textsc{Scikit-learn}}{4} & 
+  \cvskill{\textsc{Docker}}{3} & 
+  \cvskill{\textsc{HTML5}}{3} \\
+\cvskill{\textsc{Spring framework}}{3} & 
+  \cvskill{\textsc{Git}}{4} & 
+  \cvskill{\textsc{Linux}}{4} \\
+\cvskill{\textsc{SQL}}{4} & 
+  \cvskill{\textsc{Powershell}}{2} & 
+  \cvskill{\textsc{Bash}}{3} \\
+\end{tabular}}
+
+%\divider
+\medskip
+
+\cvtag{Research}
+\cvtag{Problem solving}
+\cvtag{Teamwork}
+\cvtag{Oral presentations} \\
+\cvtag{Work independently}
+\cvtag{Ability to plan}
+\cvtag{Teaching}
+\cvtag{Self-taught}
+
+\switchcolumn
+
+\cvsection{Education}
+
+\cvevent{Ph.D.\ in Software Engineering and Natural Language Processing}{University of Sevilla}{April 2015 -- March 2019}{}
+Thesis title: Aspect-based sentiment analysis: a scalable system, a condition miner, and an evaluation dataset (Cum Laude award)
+
+\medskip
+
+\cvevent{M.Sc.\ in Software Engineering and Technology}{University of Sevilla}{2012 -- 2013}{}
+
+\medskip
+
+\cvevent{B.Sc.\ in Software Engineering}{University of Sevilla}{2004 -- 2011}{}
+
+\medskip
+
+\cvsection{Languages}
+\cvskill{Spanish}{5}
+\cvskill{English}{4}
+
+% \divider
+
+\cvsection{Publications}
+\nocite{*}
+\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+
+%\cvsection{Referees}
+% \cvref{name}{email}{mailing address}
+%\cvref{Prof.\ Rafael Corchuelo}{University of Sevilla}{corchu@us.es}
+%\divider
+%\cvref{Eduardo Matallanas}{Senior Data Scientist @ Cabity}{eduardo.matallanas@gmail.com}
+
+\end{paracol}
+
+\end{document}
